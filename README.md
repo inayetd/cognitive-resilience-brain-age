@@ -71,9 +71,6 @@ difference between them reflects the imaging data rather than the pipeline.
        structural equation models for H1-H4
 ```
 
-Phenotype assembly (`03_build_phenotype.py`) runs alongside and produces the single clean
-table of cognitive, psychosocial and demographic variables that everything downstream reads.
-
 ---
 
 ## Repository layout
@@ -102,18 +99,6 @@ python 05_structural_bag.py        # ~1 hour   -> bag_structural.csv
 python 04_functional_bag.py        # overnight -> bag_functional.csv
 python 06_merge_bags.py            # seconds   -> data/clean/analysis_table.csv
 ```
-
-Step 5 is listed before step 4 deliberately: it exercises the same cross-validation,
-bias-correction and reporting machinery in about an hour, so problems surface quickly
-rather than after a long run.
-
-Steps 4 and 5 write a checkpoint after every seed and resume from it automatically if
-interrupted. Re-running the same command continues from the last completed seed.
-
-Step 4 halts with an error if any correlation matrix is not positive definite, or if the
-age-bias slope in any fold falls at or below 0.20. Both are deliberate: the first would
-require an arbitrary repair parameter, and the second would amplify prediction noise
-more than fivefold.
 
 ### Requirements
 
