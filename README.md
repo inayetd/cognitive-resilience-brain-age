@@ -179,9 +179,6 @@ approved data use agreement with the NIMH Data Archive. Redistributing any part 
 including derived per-participant files such as connectivity matrices, feature tables or
 brain age gaps — is not permitted.
 
-The `.gitignore` in this repository excludes the data directories and all intermediate
-files. Check `git status` before committing.
-
 To reproduce the analyses you will need your own approved access, after which the scripts
 expect the released files in the paths set at the top of each script.
 
